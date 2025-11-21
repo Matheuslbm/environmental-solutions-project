@@ -5,9 +5,8 @@ export function Solutions() {
   return (
     <div className="flex flex-col">
       
-      {/* 1. HERO SECTION (Topo com fundo de água) */}
+      {/* 1. HERO SECTION */}
       <section className="relative bg-blue-900 py-24 text-center text-white">
-        {/* Gradiente simulando a água do print */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-90"></div>
         
         <div className="relative container mx-auto px-4 z-10">
@@ -24,27 +23,30 @@ export function Solutions() {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           
-          {/* Grid Responsivo: 1 coluna no celular, 2 no tablet, 3 no PC */}
           <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             
             {SERVICES.map((service) => (
               <div key={service.id} className="flex flex-col items-center text-center group">
                 
-                {/* Imagem do Card */}
-                <div className="mb-6 h-48 w-full overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:-translate-y-1">
-                  <div className="flex h-full w-full items-center justify-center bg-gray-200 text-gray-500">
-                    {/* Quando tiver as fotos reais, use: <img src={service.imageUrl} ... /> */}
-                    [Foto: {service.title}]
-                  </div>
+                {/* IMAGEM DO CARD (Atualizada) */}
+                <div className="mb-6 h-48 w-full overflow-hidden rounded-lg shadow-md relative">
+                  {/* Efeito de zoom na imagem ao passar o mouse (group-hover) */}
+                  <img 
+                    src={service.imageUrl} 
+                    alt={service.imageAlt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Overlay azul sutil ao passar o mouse */}
+                  <div className="absolute inset-0 bg-blue-900 opacity-0 transition-opacity duration-300 group-hover:opacity-10"></div>
                 </div>
 
                 {/* Título */}
-                <h3 className="mb-3 min-h-[3.5rem] text-lg font-bold uppercase leading-tight text-gray-900">
+                <h3 className="mb-3 min-h-[3.5rem] text-lg font-bold uppercase leading-tight text-gray-900 group-hover:text-blue-700 transition-colors">
                   {service.title}
                 </h3>
 
-                {/* Aquele tracinho azul separador do print */}
-                <div className="mb-4 h-1 w-12 bg-blue-500"></div>
+                {/* Tracinho azul */}
+                <div className="mb-4 h-1 w-12 bg-blue-500 group-hover:w-24 transition-all duration-300"></div>
 
                 {/* Descrição */}
                 <p className="text-sm leading-relaxed text-gray-600 text-justify">
@@ -57,7 +59,7 @@ export function Solutions() {
         </div>
       </section>
 
-      {/* 3. CALL TO ACTION (Faixa Azul Clara no final) */}
+      {/* 3. CALL TO ACTION */}
       <section className="bg-blue-50 py-12 text-center">
         <div className="container mx-auto px-4">
           <h2 className="mb-6 text-xl font-bold uppercase text-blue-900 sm:text-2xl">

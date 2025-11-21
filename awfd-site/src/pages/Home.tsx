@@ -1,19 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react'; // Importando as setinhas
 import { HOME_CONTENT } from '../data/content';
 
 export function Home() {
-  // Estado para controlar qual imagem está aparecendo grande na galeria
-  // Começa com o índice 0 (a primeira imagem)
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Quantidade total de slides para facilitar a conta
+  const totalSlides = HOME_CONTENT.galleryImages.length;
+
+  // Função para ir para o Próximo Slide
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+
+  // Função para ir para o Slide Anterior
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  // Efeito para Mudar Automaticamente (Auto-Play)
+  useEffect(() => {
+    // Cria um intervalo que roda a cada 5000ms (5 segundos)
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    // Limpeza: Se o usuário sair da página, o timer para (evita bugs de memória)
+    return () => clearInterval(interval);
+  }, [currentSlide]); // Recria o timer sempre que o slide muda
 
   return (
     <div className="flex flex-col">
       
-      {/* 1. HERO SECTION (O Topo Azul) */}
+      {/* 1. HERO SECTION */}
       <section className="relative bg-blue-900 py-24 text-center text-white overflow-hidden">
-        {/* Fundo decorativo de "água" (Simulado com gradiente por enquanto) */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-900 opacity-90"></div>
-        
         <div className="relative container mx-auto px-4 z-10">
           <h1 className="mb-4 text-3xl font-bold tracking-wide sm:text-4xl md:text-5xl font-serif">
             {HOME_CONTENT.hero.title}
@@ -24,78 +45,88 @@ export function Home() {
         </div>
       </section>
 
-      {/* 2. SEÇÃO DIVIDIDA (Imagens Esquerda x Texto Direita) */}
+      {/* 2. SEÇÃO TÉCNICA (Imagens Renders + Texto) */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            
-            {/* COLUNA ESQUERDA: Imagens Verticais */}
-            <div className="w-full md:w-1/3 flex flex-col gap-4">
-               {/* Placeholder para as imagens verticais do equipamento (Render 3D) */}
-               <div className="h-64 w-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm text-center border border-gray-300">
-                  [Imagem Render AWFD Peça]
+          <div className="flex flex-col-reverse md:flex-row gap-12 items-start">
+            <div className="w-full md:w-5/12 flex flex-col gap-6 sticky top-24">
+               <div className="relative h-72 w-full overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white">
+                  <img src="/images/awfd-render.png" alt="Render AWFD" className="h-full w-full object-contain p-4"/>
                </div>
-               <div className="h-64 w-full bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm text-center border border-gray-300">
-                  [Imagem Render Sistema Completo]
+               <div className="relative h-80 w-full overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white">
+                  <img src="/images/eco3-system.png" alt="Render ECO3" className="h-full w-full object-contain p-2"/>
                </div>
             </div>
 
-            {/* COLUNA DIREITA: Textos Explicativos */}
-            <div className="w-full md:w-2/3 space-y-12">
+            <div className="w-full md:w-7/12 space-y-16">
               {HOME_CONTENT.technologies.map((tech) => (
-                <div key={tech.id}>
-                  <h2 className="text-3xl font-bold text-blue-900 mb-6 font-serif">
+                <div key={tech.id} className="flex flex-col">
+                  <h2 className="text-3xl font-bold text-blue-900 mb-6 font-serif border-b-4 border-blue-500 inline-block w-fit pb-2">
                     {tech.title}
                   </h2>
-                  <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
-                    {tech.text.map((paragraph, idx) => (
-                      <p key={idx}>{paragraph}</p>
-                    ))}
+                  <div className="space-y-4 text-gray-700 leading-relaxed text-justify text-lg">
+                    {tech.text.map((paragraph, idx) => <p key={idx}>{paragraph}</p>)}
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* 3. SEÇÃO GALERIA DE SERVIÇOS */}
-      <section className="bg-blue-50 py-16">
+      {/* 3. CARROSSEL DE SERVIÇOS (AQUI ESTÁ A MUDANÇA) */}
+      <section className="bg-blue-50 py-20">
         <div className="container mx-auto px-4 text-center">
-          
-          {/* Título (Corrigi o typo "ALGNS" para "ALGUNS") */}
-          <h2 className="text-3xl font-bold text-blue-900 mb-10 font-serif uppercase">
+          <h2 className="text-3xl font-bold text-blue-900 mb-12 font-serif uppercase tracking-wider">
             Alguns de Nossos Serviços
           </h2>
 
-          {/* Componente de Galeria */}
-          <div className="max-w-4xl mx-auto">
+          {/* Container do Slider */}
+          <div className="relative max-w-5xl mx-auto group">
             
-            {/* Imagem Principal Grande */}
-            <div className="mb-4 aspect-video w-full overflow-hidden rounded-lg bg-gray-300 shadow-lg">
-               {/* Lógica: Mostra a imagem cujo índice bate com o estado activeImageIndex */}
-               <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">
-                 {/* Substituir pela tag <img src={HOME_CONTENT.galleryImages[activeImageIndex].src} /> */}
-                 [Foto Grande: {HOME_CONTENT.galleryImages[activeImageIndex].alt}]
+            {/* Imagem Principal */}
+            <div className="aspect-video w-full overflow-hidden rounded-xl bg-white shadow-2xl border border-gray-200 relative">
+               <img 
+                src={HOME_CONTENT.galleryImages[currentSlide].src} 
+                alt={HOME_CONTENT.galleryImages[currentSlide].alt}
+                className="w-full h-full object-cover transition-all duration-500 ease-in-out"
+               />
+               
+               {/* Legenda escura no rodapé da foto */}
+               <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white py-4 px-6 text-left backdrop-blur-sm">
+                 <p className="font-bold text-lg">{HOME_CONTENT.galleryImages[currentSlide].alt}</p>
                </div>
             </div>
 
-            {/* Miniaturas (Thumbnails) */}
-            <div className="flex justify-center gap-4 overflow-x-auto pb-4">
-              {HOME_CONTENT.galleryImages.map((img, index) => (
+            {/* SETA ESQUERDA (Anterior) */}
+            <button 
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-3 text-blue-900 shadow-lg hover:bg-blue-600 hover:text-white transition-all focus:outline-none opacity-0 group-hover:opacity-100"
+              aria-label="Foto anterior"
+            >
+              <ChevronLeft size={32} strokeWidth={3} />
+            </button>
+
+            {/* SETA DIREITA (Próxima) */}
+            <button 
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-3 text-blue-900 shadow-lg hover:bg-blue-600 hover:text-white transition-all focus:outline-none opacity-0 group-hover:opacity-100"
+              aria-label="Próxima foto"
+            >
+              <ChevronRight size={32} strokeWidth={3} />
+            </button>
+
+            {/* Indicadores (Bolinhas em baixo) */}
+            <div className="flex justify-center gap-2 mt-6">
+              {HOME_CONTENT.galleryImages.map((_, index) => (
                 <button
-                  key={img.id}
-                  onClick={() => setActiveImageIndex(index)}
-                  className={`h-20 w-24 flex-shrink-0 overflow-hidden rounded border-2 transition-all
-                    ${activeImageIndex === index ? 'border-blue-600 opacity-100 ring-2 ring-blue-400' : 'border-transparent opacity-60 hover:opacity-100'}
-                  `}
-                >
-                  <div className="w-full h-full bg-gray-300 flex items-center justify-center text-xs">
-                    {/* <img src={img.src} /> */}
-                    Thumb {index + 1}
-                  </div>
-                </button>
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-3 w-3 rounded-full transition-all ${
+                    currentSlide === index ? 'bg-blue-600 w-8' : 'bg-blue-200 hover:bg-blue-400'
+                  }`}
+                  aria-label={`Ir para foto ${index + 1}`}
+                />
               ))}
             </div>
 
