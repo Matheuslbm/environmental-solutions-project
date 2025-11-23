@@ -78,7 +78,7 @@ export function Home() {
       <section className="bg-blue-50 py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-blue-900 mb-12 font-serif uppercase tracking-wider">
-            Alguns de Nossos Serviços
+            Some of Our Services
           </h2>
 
           {/* Container do Slider */}

@@ -52,20 +52,20 @@ export function Contact() {
                 <div>
                   <input 
                     {...register('name', { required: true })}
-                    placeholder="Nome *" 
+                    placeholder="Name *" 
                     className="w-full rounded border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
                   />
-                  {errors.name && <span className="text-xs text-red-500">Campo obrigatório</span>}
+                  {errors.name && <span className="text-xs text-red-500">Required fieldo</span>}
                 </div>
 
                 {/* Empresa */}
                 <div>
                   <input 
                     {...register('company', { required: true })}
-                    placeholder="Empresa *" 
+                    placeholder="Company *" 
                     className="w-full rounded border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
                   />
-                  {errors.company && <span className="text-xs text-red-500">Campo obrigatório</span>}
+                  {errors.company && <span className="text-xs text-red-500">Required field</span>}
                 </div>
 
                 {/* Email */}
@@ -76,37 +76,37 @@ export function Contact() {
                     placeholder="E-mail *" 
                     className="w-full rounded border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
                   />
-                  {errors.email && <span className="text-xs text-red-500">Email inválido</span>}
+                  {errors.email && <span className="text-xs text-red-500">Invalid email</span>}
                 </div>
 
-                {/* Telefone */}
+                {/* Phone */}
                 <div>
                   <input 
                     {...register('phone', { required: true })}
-                    placeholder="Telefone *" 
+                    placeholder="Phone *" 
                     className="w-full rounded border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
                   />
-                  {errors.phone && <span className="text-xs text-red-500">Campo obrigatório</span>}
+                  {errors.phone && <span className="text-xs text-red-500">Required field</span>}
                 </div>
 
-                {/* Mensagem */}
+                {/* Message */}
                 <div>
                   <textarea 
                     {...register('message', { required: true })}
                     rows={4}
-                    placeholder="Digite sua mensagem aqui *" 
+                    placeholder="Enter your message here *" 
                     className="w-full rounded border border-gray-300 px-4 py-3 text-gray-700 focus:border-blue-500 focus:outline-none"
                   ></textarea>
-                  {errors.message && <span className="text-xs text-red-500">Campo obrigatório</span>}
+                  {errors.message && <span className="text-xs text-red-500">Required field</span>}
                 </div>
 
-                {/* Botão Centralizado */}
+                {/* Centered Button */}
                 <div className="mt-4 flex justify-center">
                   <button 
                     type="submit"
                     className="rounded bg-blue-500 px-8 py-3 font-bold text-white shadow-md transition hover:bg-blue-600"
                   >
-                    ENVIAR MENSAGEM
+                    SEND MESSAGE
                   </button>
                 </div>
 

@@ -2,9 +2,9 @@ import type { CompanyInfo, ContactPerson, NavigationLink, ServiceItem } from '..
 
 export const NAVIGATION: NavigationLink[] = [
     { label: 'Home', href: '/' },
-    { label: 'Soluções', href: '/solucoes' },
-    { label: 'Sobre', href: '/sobre' },
-    { label: 'Contato', href: '/contato' },
+    { label: 'Solutions', href: '/solucoes' },
+    { label: 'About', href: '/sobre' },
+    { label: 'Contact', href: '/contato' },
 ];
 
 export const COMPANY: CompanyInfo = {
@@ -18,109 +18,109 @@ export const COMPANY: CompanyInfo = {
 
 export const TEAM: ContactPerson[] = [
     {
-        name: "João Mariz",
-        role: "Sócio-diretor",
-        phone: "(11) 98578-2437",
-        email: "joao.mariz@awfd.com.br"
+        name: "Antonio Carlos",
+        role: "",
+        phone: "55 21 998631960",
+        email: ""
     },
     {
-        name: "José Rafael Alvim",
-        role: "Responsável Técnico",
-        phone: "(19) 9 9287-2817",
-        email: "rafael@awfd.com.br"
+        name: "Rosimar Ramos",
+        role: "",
+        phone: "+55 21 995085765",
+        email: "rosimar.ramos@gmail.com"
     }
 ];
 
 export const SERVICES: ServiceItem[] = [
     {
         id: 'domestico',
-        title: 'Tratamento de Efluentes Domésticos',
-        description: 'Aplicável para o tratamento de esgoto doméstico, a aeração com AWFD® é muito efetiva. O efluente após tratamento, de acordo com características técnicas do tratamento, como tempo de detenção, pode resultar em uma água límpida e inodora, atendendo a todos os parâmetros legais.',
-        imageAlt: 'Tanque de tratamento de efluentes domésticos',
+        title: 'Domestic Wastewater Treatment',
+        description: 'Applicable to domestic sewage treatment, AWFD® aeration is highly effective. Depending on technical parameters such as retention time, the treated effluent can become clear and odorless, meeting all regulatory standards.',
+        imageAlt: 'Domestic wastewater treatment tank',
         imageUrl: '/images/solutions-image-1.png'
     },
     {
         id: 'chorume',
-        title: 'Tratamento de Chorume de Aterros Sanitários',
-        description: 'O chorume é um grande problema para qualquer aterro sanitário. Ao invés de gastar fortunas para enviar o chorume para uma estação de tratamento repleta de químicos, a AWFD® proporciona um tratamento in loco, possibilitando o reaproveitamento da água ou lançamento em corpo hídrico.',
-        imageAlt: 'Tratamento de chorume em aterro',
+        title: 'Landfill Leachate Treatment',
+        description: 'Leachate is a major challenge for any sanitary landfill. Instead of spending a fortune transporting leachate to chemical-heavy treatment plants, AWFD® provides in-situ treatment, enabling water reuse or discharge into water bodies.',
+        imageAlt: 'Landfill leachate treatment',
         imageUrl: '/images/solutions-image-2.png'
     },
     {
         id: 'industrial',
-        title: 'Tratamento de Efluentes Industriais',
-        description: 'Efluentes industriais podem conter os mais variados tipos de substâncias, desde óleos e graxas, a sabão e gorduras. A Solução AWFD®, somada à força do ECO3®, mostrou-se com grandes resultados em "cases" em que foram implantadas.',
-        imageAlt: 'Instalação industrial complexa',
+        title: 'Industrial Effluent Treatment',
+        description: 'Industrial effluents can contain a wide variety of substances, ranging from oils and greases to soaps and fats. The AWFD® Solution, combined with the power of ECO3®, has demonstrated exceptional results in case studies where it has been implemented.',
+        imageAlt: 'Complex industrial installation',
         imageUrl: '/images/solutions-image-3.png'
     },
     {
         id: 'agua',
-        title: 'Tratamento de Água',
-        description: 'A captação de água de poços ou cursos d\'água superficiais necessitam de tratamento para remoção de impurezas e componentes minerais. O sistema de tratamento AWFD® é ideal para a utilização de água sem a necessidade de adição de produtos químicos.',
-        imageAlt: 'Tubulação despejando água tratada',
+        title: 'Water Treatment',
+        description: 'Water abstraction from wells or surface sources requires treatment to remove impurities and mineral components. The AWFD® system is ideal for water treatment without the need for chemical additives.',
+        imageAlt: 'Piping discharging treated water',
         imageUrl: '/images/solutions-image-4.png'
     },
     {
         id: 'nebulizacao',
-        title: 'Nebulização',
-        description: 'A nebulização pode ser utilizada nos sistemas de tratamento de efluentes e tem grande resultado na redução do volume de efluente a ser tratado, diminuindo custos com disposição final desses efluentes.',
-        imageAlt: 'Tanque de tratamento com nebulização',
+        title: 'Nebulization (Volume Reduction)',
+        description: 'Nebulization can be utilized in effluent treatment systems and delivers significant results in reducing the volume of effluent to be treated, thereby lowering final disposal costs.',
+        imageAlt: 'Nebulization treatment tank',
         imageUrl: '/images/solutions-image-5.png'
     },
     {
         id: 'aeracao',
-        title: 'Aeração',
-        description: 'A aeração realizada pelo AWFD® injeta micro-nano bolhas no efluente, o que proporciona uma aeração muito mais efetiva, uma vez que as bolhas de ar permanecem e agem por muito mais tempo no efluente. Apenas com a aeração, é possível obter ganhos de remoção de até 85% de parâmetros como DBO e DQO.',
-        imageAlt: 'Detalhe do processo de aeração',
+        title: 'Aeration',
+        description: 'The aeration performed by the AWFD® injects micro-nano bubbles into the effluent, providing significantly more effective aeration as the air bubbles remain active for much longer. With aeration alone, it is possible to achieve removal rates of up to 85% for parameters such as BOD (Biochemical Oxygen Demand) and COD (Chemical Oxygen Demand).',
+        imageAlt: 'Detail of the aeration process',
         imageUrl: '/images/solutions-image-6.png'
     }
 ];
 
 export const ABOUT_CONTENT = {
-    title: "O Criador da Tecnologia",
-    text: "Criador da Tecnologia AWFD® (Air Waterfall Device) e das células ECO3®, João Mariz é especialista em gestão de projetos de investimento econômico, ambiental e economia de recursos. Com mais de 30 anos de experiência, Mariz implementou mais de 85 projetos de estações de tratamento de esgoto industrial, doméstico, de chorume e de água pelo mundo, sendo 35 delas no Brasil. Também possui formação em Gestão de Empresas e pós-graduação em Gestão Ambiental com foco em biotecnologia.",
+    title: "The Creator of the Technology",
+    text: "Creator of the AWFD® (Air Waterfall Device) technology and ECO3® cells, João Mariz is a specialist in managing economic and environmental investment projects, as well as resource efficiency. With over 30 years of experience, Mariz has implemented more than 85 industrial and domestic wastewater, leachate, and water treatment plants worldwide, including 35 in Brazil. He also holds a degree in Business Administration and a postgraduate degree in Environmental Management focusing on biotechnology",
     imageUrl: "/images/about-image-1.png",
-    imageAlt: "João Mariz apresentando o painel da tecnologia AWFD"
+    imageAlt: "João Mariz presenting the AWFD technology panel"
 };
 
 export const HOME_CONTENT = {
     hero: {
-        title: "A SOLUÇÃO PARA O TRATAMENTO DE SEU EFLUENTE",
-        subtitle: "SEJA ELE DOMÉSTICO, INDUSTRIAL, CHORUME OU DOS MAIS DIFERENTES TIPOS"
+        title: "THE SOLUTION FOR YOUR EFFLUENT TREATMENT",
+        subtitle: "WHETHER DOMESTIC, INDUSTRIAL, LEACHATE, OR SPECIALIZED WASTE."
     },
     technologies: [
         {
             id: 'awfd',
             title: 'AWFD',
             text: [
-                "O AWFD® (Air Waterfall Device) é um equipamento criado e patenteado pelo nosso fundador, João Mariz.",
-                "Com sua propriedade de Efeito Venturi, o AWFD® proporciona uma aeração totalmente diferente de outros aeradores mais comuns no mercado, injetando micro-nano bolhas no efluente a ser tratado, garantindo uma concentração e qualidade de aeração como nenhuma outra solução.",
-                "Esta solução implementada em diversos sites em Portugal e no Brasil, mostra que a aeração proporcionada pelo AWFD® promove remoções de cargas orgânicas de até 85%."
+                "The AWFD® (Air Waterfall Device) is equipment created and patented by our founder, João Mariz.",
+                "Utilizing the Venturi Effect, the AWFD® provides aeration that is distinct from common aerators on the market. By injecting micro-nano bubbles into the effluent, it ensures an aeration density and quality unmatched by any other solution.",
+                "Implemented across multiple sites in Portugal and Brazil, this solution demonstrates that the aeration provided by the AWFD® promotes organic load removal rates of up to 85%."
             ]
         },
         {
-            id: 'ozonio',
-            title: 'OZÔNIO - ECO3',
+            id: 'ozone',
+            title: 'OZONE - ECO3',
             text: [
-                "ECO3® são células que transformam o oxigênio atmosférico em ozônio.",
-                "O ozônio é cerca de 30 vezes mais oxidante e 50 vezes mais rápido do que o oxigênio na oxidação de partículas orgânicas, o que traz um excelente ganho no tratamento de quaisquer efluentes.",
-                "O ozônio produzido pelas células ECO3® é injetado nos aeradores AWFD®, acelerando o tratamento e reduzindo o consumo de energia elétrica."
+                "ECO3® cells transform atmospheric oxygen into ozone.",
+                "Ozone is approximately 30 times more oxidizing and 50 times faster than oxygen in oxidizing organic particles, delivering superior results in the treatment of any effluent.",
+                "The ozone produced by the ECO3® cells is injected into the AWFD® aerators, accelerating the treatment process and reducing energy consumption."
             ]
         }
     ],
     galleryImages: [
-        { id: 1, src: '/images/services-image-1.png', alt: 'Serviço de Tratamento 1' },
-        { id: 2, src: '/images/services-image-2.png', alt: 'Serviço de Tratamento 2' },
-        { id: 3, src: '/images/services-image-3.png', alt: 'Serviço de Tratamento 3' },
-        { id: 4, src: '/images/services-image-4.png', alt: 'Serviço de Tratamento 4' },
-        { id: 5, src: '/images/services-image-5.png', alt: 'Serviço de Tratamento 5' },
-        { id: 6, src: '/images/services-image-6.png', alt: 'Serviço de Tratamento 6' },
+        { id: 1, src: '/images/services-image-1.png', alt: 'Treatment service 1' },
+        { id: 2, src: '/images/services-image-2.png', alt: 'Treatment service 2' },
+        { id: 3, src: '/images/services-image-3.png', alt: 'Treatment service 3' },
+        { id: 4, src: '/images/services-image-4.png', alt: 'Treatment service 4' },
+        { id: 5, src: '/images/services-image-5.png', alt: 'Treatment service 5' },
+        { id: 6, src: '/images/services-image-6.png', alt: 'Treatment service 6' },
     ]
 };
 
 export const CONTACT_PAGE = {
-    title: "PODEMOS TE AJUDAR COM A MELHOR SOLUÇÃO PARA SEU CASO",
-    subtitle: "Chame um de nossos profissionais",
-    descriptionTitle: "FALE CONOSCO",
-    descriptionText: "Com soluções compactas, podemos implementar grandes soluções com pouco espaço, sendo aplicável para os mais diversos efluentes, nas mais diversas situações."
+    title: "WE CAN HELP YOU FIND THE BEST SOLUTION FOR YOUR NEEDS",
+    subtitle: "Speak to one of our experts and discover how AWFD® technology can optimize your effluent treatment processes.",
+    descriptionTitle: "CONTACT US",
+    descriptionText: "Using compact designs, we deliver high-impact solutions with a small footprint, suitable for a wide range of effluents across diverse scenarios."
 };

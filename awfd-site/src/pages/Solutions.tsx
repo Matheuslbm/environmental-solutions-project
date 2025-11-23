@@ -4,17 +4,17 @@ import { SERVICES } from '../data/content';
 export function Solutions() {
   return (
     <div className="flex flex-col">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative bg-blue-900 py-24 text-center text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-90"></div>
-        
+
         <div className="relative container mx-auto px-4 z-10">
           <h1 className="mb-4 text-3xl font-bold uppercase tracking-wide sm:text-4xl md:text-5xl">
-            Conheça as Aplicações do AWFD
+            Discover AWFD Applications
           </h1>
           <p className="text-lg font-medium text-blue-100 sm:text-xl">
-            Resolvendo seu problema com efluentes
+            Solving Your Effluent Challenges
           </p>
         </div>
       </section>
@@ -22,17 +22,17 @@ export function Solutions() {
       {/* 2. GRID DE SERVIÇOS */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          
+
           <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-            
+
             {SERVICES.map((service) => (
               <div key={service.id} className="flex flex-col items-center text-center group">
-                
+
                 {/* IMAGEM DO CARD (Atualizada) */}
                 <div className="mb-6 h-48 w-full overflow-hidden rounded-lg shadow-md relative">
                   {/* Efeito de zoom na imagem ao passar o mouse (group-hover) */}
-                  <img 
-                    src={service.imageUrl} 
+                  <img
+                    src={service.imageUrl}
                     alt={service.imageAlt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -63,13 +63,12 @@ export function Solutions() {
       <section className="bg-blue-50 py-12 text-center">
         <div className="container mx-auto px-4">
           <h2 className="mb-6 text-xl font-bold uppercase text-blue-900 sm:text-2xl">
-            Contate um de nossos profissionais
-          </h2>
+            Contact one of our professionals.          </h2>
           <Link
             to="/contato"
             className="inline-block rounded bg-blue-500 px-8 py-3 text-sm font-bold text-white transition hover:bg-blue-600 shadow-md"
           >
-            VEJA MAIS
+            Get in Touch
           </Link>
         </div>
       </section>
