@@ -28,6 +28,12 @@ export const TEAM: ContactPerson[] = [
         role: "",
         phone: "+55 21 995085765",
         email: "rosimar.ramos@gmail.com"
+    },
+        {
+        name: "Dr Mark Adjetey",
+        role: "",
+        phone: "+1 240 855 1984",
+        email: ""
     }
 ];
 
