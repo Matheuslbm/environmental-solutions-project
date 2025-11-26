@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
-import { SERVICES } from '../data/content';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function Solutions() {
+  const { translations } = useLanguage();
+  const { services, solutions } = translations;
+
   return (
     <div className="flex flex-col">
 
@@ -11,10 +14,10 @@ export function Solutions() {
 
         <div className="relative container mx-auto px-4 z-10">
           <h1 className="mb-4 text-3xl font-bold uppercase tracking-wide sm:text-4xl md:text-5xl">
-            Discover AWFD Applications
+            {solutions.hero.title}
           </h1>
           <p className="text-lg font-medium text-blue-100 sm:text-xl">
-            Solving Your Effluent Challenges
+            {solutions.hero.subtitle}
           </p>
         </div>
       </section>
@@ -25,7 +28,7 @@ export function Solutions() {
 
           <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
 
-            {SERVICES.map((service) => (
+            {services.map((service) => (
               <div key={service.id} className="flex flex-col items-center text-center group">
 
                 {/* IMAGEM DO CARD (Atualizada) */}
@@ -63,12 +66,12 @@ export function Solutions() {
       <section className="bg-blue-50 py-12 text-center">
         <div className="container mx-auto px-4">
           <h2 className="mb-6 text-xl font-bold uppercase text-blue-900 sm:text-2xl">
-            Contact one of our professionals.          </h2>
+            {solutions.cta.title}          </h2>
           <Link
             to="/contato"
             className="inline-block rounded bg-blue-500 px-8 py-3 text-sm font-bold text-white transition hover:bg-blue-600 shadow-md"
           >
-            Get in Touch
+            {solutions.cta.button}
           </Link>
         </div>
       </section>
