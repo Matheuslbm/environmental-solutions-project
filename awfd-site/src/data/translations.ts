@@ -105,7 +105,7 @@ export const translations: Record<Language, Translations> = {
                 name: "Dr Mark Adjetey",
                 role: "",
                 phone: "+1 240 855 1984",
-                email: ""
+                email: "markadjetey3@gmail.com"
             }
         ],
         services: [
@@ -267,7 +267,7 @@ export const translations: Record<Language, Translations> = {
                 name: "Dr Mark Adjetey",
                 role: "",
                 phone: "+1 240 855 1984",
-                email: ""
+                email: "markadjetey3@gmail.com"
             }
         ],
         services: [

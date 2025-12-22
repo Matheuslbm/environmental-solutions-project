@@ -33,7 +33,7 @@ export const TEAM: ContactPerson[] = [
         name: "Dr Mark Adjetey",
         role: "",
         phone: "+1 240 855 1984",
-        email: ""
+        email: "markadjetey3@gmail.com"
     }
 ];
 
